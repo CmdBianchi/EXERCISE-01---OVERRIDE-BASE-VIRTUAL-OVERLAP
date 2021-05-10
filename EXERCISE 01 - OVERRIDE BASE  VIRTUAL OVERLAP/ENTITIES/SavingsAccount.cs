@@ -8,7 +8,7 @@ namespace EXERCISE_01___OVERRIDE_BASE__VIRTUAL_OVERLAP.ENTITIES {
     class SavingsAccount : Account {
         public double Interesrate { get; set; }
     //------------------------------- CONST -------------------------------//  
-        public SavingsAccount() {}
+        public sealed SavingsAccount() {} //----------> SELADO
 
         public SavingsAccount(int number, string holder, double balance, double interesrate) : base(number, holder, balance) {
             Interesrate = interesrate;
@@ -17,7 +17,7 @@ namespace EXERCISE_01___OVERRIDE_BASE__VIRTUAL_OVERLAP.ENTITIES {
         public void UpdateBalance() {
             Balance += Balance * Interesrate;
         }
-        public override void Withdraw(double amount) {
+        public sealed override void Withdraw(double amount) {
             Balance -= amount;
         }
 
