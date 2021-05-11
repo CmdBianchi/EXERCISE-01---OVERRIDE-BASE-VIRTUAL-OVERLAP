@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 //------------------------------- START -------------------------------//
 namespace EXERCISE_01___OVERRIDE_BASE__VIRTUAL_OVERLAP.ENTITIES  {
     //------------------------------- START -------------------------------//
-    class Account {
-        public int Number { get; private set; }
-        public string Holder { get; private set; }
-        public double Balance { get; protected set; }
+    abstract class Account {
+        public int Number { get;  set; }
+        public string Holder { get;  set; }
+        public double Balance { get;  set; }
     //------------------------------- CONST -------------------------------//  
         public Account() { }
 

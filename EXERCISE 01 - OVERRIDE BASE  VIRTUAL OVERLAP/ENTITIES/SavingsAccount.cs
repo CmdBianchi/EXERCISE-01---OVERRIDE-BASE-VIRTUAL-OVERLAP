@@ -5,22 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 namespace EXERCISE_01___OVERRIDE_BASE__VIRTUAL_OVERLAP.ENTITIES {
     //------------------------------- START -------------------------------//
-    class SavingsAccount : Account {
-        public double Interesrate { get; set; }
-    //------------------------------- CONST -------------------------------//  
-        public sealed SavingsAccount() {} //----------> SELADO
+    class SavingsAccount : Account  {
+        public double InterestRate { get; set; }
 
-        public SavingsAccount(int number, string holder, double balance, double interesrate) : base(number, holder, balance) {
-            Interesrate = interesrate;
+        //------------------------------- CONST -------------------------------//  
+        public SavingsAccount(){
         }
-    //------------------------------- MET --------------------------------//
+
+        //------------------------------- MET --------------------------------//
+        public SavingsAccount(int number, string holder, double balance, double interestRate) : base(number, holder, balance) {
+            InterestRate = interestRate;
+        }
+
         public void UpdateBalance() {
-            Balance += Balance * Interesrate;
-        }
-        public sealed override void Withdraw(double amount) {
-            Balance -= amount;
+            Balance += Balance * InterestRate;
         }
 
+        public override void Withdraw(double amount) {
+            base.Withdraw(amount);
+            Balance -= 2.0;
+        }
     }
     //-------------------------------- END -------------------------------//
 }
